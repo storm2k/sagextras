@@ -14,12 +14,12 @@ License URI:        http://opensource.org/licenses/MIT
 namespace D6D\Sagextras;
 
 function load_modules() {
-  global $_wp_theme_features;
-  foreach (glob(__DIR__ . '/modules/*.php') as $file) {
-    $feature = 'se-' . basename($file, '.php');
-    if (isset($_wp_theme_features[$feature])) {
-      require_once $file;
-    }
-  }
+  	if (current_theme_supports('se-navwalker')) {
+  		require_once __DIR__ . '/modules/se-navwalker.php';
+  	}
+
+  	if (current_theme_supports('se-gallery')) {
+  		require_once __DIR__ . '/modules/se-gallery.php';
+  	}
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\load_modules');
