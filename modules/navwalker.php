@@ -102,9 +102,13 @@ function sagextra_nav_menu_args($args = '') {
 }
 
 /**
- * URL Compare helper class, it's needed for the code to work.
- * Found that out the hard way once :)
+ * Utility classes.
  */
+function is_element_empty($element) {
+  $element = trim($element);
+  return !empty($element);
+}
+
 function url_compare($url, $rel) {
   $url = trailingslashit($url);
   $rel = trailingslashit($rel);
@@ -113,14 +117,6 @@ function url_compare($url, $rel) {
   } else {
     return false;
   }
-}
-
-/**
- * Utility classes.
- */
-function is_element_empty($element) {
-  $element = trim($element);
-  return !empty($element);
 }
 
 add_action( 'after_setup_theme', 'sagextra_disable_walker' );
