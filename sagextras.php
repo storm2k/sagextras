@@ -13,7 +13,7 @@ License URI:        http://opensource.org/licenses/MIT
 
 function load_modules() {
   if (current_theme_supports('se-navwalker')) {
-    // Check if the Sage 8.x navwalker is enabled and turn off if so.
+    // Check if the Soil 3.x navwalker is enabled and turn off if so.
     if (current_theme_supports('soil-nav-walker')) {
       remove_theme_support('soil-nav-walker');
     }
