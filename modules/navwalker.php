@@ -68,18 +68,6 @@ class Sagextra_Nav_Walker extends Walker_Nav_Menu {
 }
 
 /**
- * Turn off Sage Navwalker
- *
- * Check if Sage NavWalker is enabled
- * Turn it off if it is
- */
-function sagextra_disable_walker() {
-  if (current_theme_supports('soil-nav-walker')) {
-    remove_theme_support('soil-nav-walker');
-  }
-}
-
-/**
  * Clean up wp_nav_menu_args
  *
  * Remove the container
@@ -101,7 +89,7 @@ function sagextra_nav_menu_args($args = '') {
 }
 
 /**
- * Utility classes.
+ * Utility functions.
  */
 function is_element_empty($element) {
   $element = trim($element);
