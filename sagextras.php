@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name:        Sagextras
-Plugin URI:         http://dimensionsixdesign.com/se
-Description:        Reenables some Bootstrap specific functions in the Sage theme.
+Plugin URI:         https://github.com/storm2k/sagextras
+Description:        Restores some Bootstrap specific functionality to the Sage theme.
 Version:            1.0.0
 Author:             Michael Romero
-Author URI:         http://dimensionsixdesign.com/
+Author URI:         https://github.com/storm2k
 
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
