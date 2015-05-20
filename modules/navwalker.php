@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Restore the sagextra Bootstrap Navwalker for a cleaner Bootstrap menu 
- *
+ * Restore the Roots 7.0.3 Bootstrap Navwalker for a cleaner Bootstrap menu 
  */
 class Sagextra_Nav_Walker extends Walker_Nav_Menu {
   private $cpt; // Boolean, is current post a custom post type.
