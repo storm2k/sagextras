@@ -5,7 +5,7 @@ namespace D6D\Sagextras\Gallery;
  * Restore the Roots Bootstrap Gallery code for a gallery that's Bootstrap friendly.
  *
  */
-function roots_gallery($attr) {
+function sagextra_gallery($attr) {
   $post = get_post();
 
   static $instance = 0;
@@ -111,17 +111,17 @@ function roots_gallery($attr) {
 
   return $output;
 }
-if (current_theme_supports('bootstrap-gallery')) {
+if (current_theme_supports('se-gallery')) {
   remove_shortcode('gallery');
-  add_shortcode('gallery', 'roots_gallery');
+  add_shortcode('gallery', 'sagextra_gallery');
   add_filter('use_default_gallery_style', '__return_null');
 }
 
 /**
  * Add class="thumbnail img-thumbnail" to attachment items
  */
-function roots_attachment_link_class($html) {
+function sagextra_attachment_link_class($html) {
   $html = str_replace('<a', '<a class="thumbnail img-thumbnail"', $html);
   return $html;
 }
-add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);
+add_filter('wp_get_attachment_link', 'sagextra_attachment_link_class', 10, 1);
