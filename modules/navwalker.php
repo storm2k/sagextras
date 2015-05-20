@@ -106,6 +106,5 @@ function url_compare($url, $rel) {
   }
 }
 
-add_action( 'after_setup_theme', 'sagextra_disable_walker' );
 add_filter('wp_nav_menu_args', 'sagextra_nav_menu_args');
 add_filter('nav_menu_item_id', '__return_null');
