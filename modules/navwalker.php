@@ -80,7 +80,6 @@ function sagextra_disable_walker() {
   }
 }
 
-
 /**
  * Clean up wp_nav_menu_args
  *
@@ -114,6 +113,14 @@ function url_compare($url, $rel) {
   } else {
     return false;
   }
+}
+
+/**
+ * Utility classes.
+ */
+function is_element_empty($element) {
+  $element = trim($element);
+  return !empty($element);
 }
 
 add_action( 'after_setup_theme', 'sagextra_disable_walker' );
