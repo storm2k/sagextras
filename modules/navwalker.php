@@ -68,6 +68,20 @@ class Sagextra_Nav_Walker extends Walker_Nav_Menu {
     return array_filter($classes, 'is_element_empty');
   }
 }
+
+/**
+ * Turn off Sage Navwalker
+ *
+ * Check if Sage NavWalker is enabled
+ * Turn it off if it is
+ */
+function sagextra_disable_walker() {
+  if (current_theme_supports('soil-nav-walker')) {
+    remove_theme_support('soil-nav-walker');
+  }
+}
+
+
 /**
  * Clean up wp_nav_menu_args
  *
@@ -103,5 +117,6 @@ function url_compare($url, $rel) {
   }
 }
 
+add_action( 'after_setup_theme', 'sagextra_disable_walker' );
 add_filter('wp_nav_menu_args', 'sagextra_nav_menu_args');
 add_filter('nav_menu_item_id', '__return_null');
