@@ -7,7 +7,7 @@ A tiny Wordpress plugin that restores some Bootstrap specific functionality to t
 * **Restore the Roots Bootstrap Navwalker**<br>
   `add_theme_support('se-navwalker');`
 
-**REMINDER!!!** You need to go into `templates\header.php` and replace the menu code with the code contained in [this Gist](https://gist.github.com/retlehs/1b49f6c00d5140962d56) so the menu works properly.
+**REMINDER!!!** You need to go into `templates/header.php` and replace the menu code with the code contained in [this Gist](https://gist.github.com/storm2k/c7ca7f93ed155f5a8f85) so the menu works properly.
 
 * **Bootstrap friendly Gallery code**<br>
   `add_theme_support('se-gallery');`
