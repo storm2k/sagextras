@@ -3,7 +3,7 @@
 /**
  * Restore the Roots 7.0.3 Bootstrap Navwalker for a cleaner Bootstrap menu 
  */
-class Sagextra_Nav_Walker extends Walker_Nav_Menu {
+class Sagextras_Nav_Walker extends Walker_Nav_Menu {
   private $cpt; // Boolean, is current post a custom post type.
   private $archive; // Stores the archive page for current url.
   function __construct() {
@@ -32,7 +32,7 @@ class Sagextra_Nav_Walker extends Walker_Nav_Menu {
     elseif (stristr($item_html, 'li class="dropdown-header')) {
       $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
     }
-    $item_html = apply_filters('sagextra_wp_nav_menu_item', $item_html);
+    $item_html = apply_filters('sagextras_wp_nav_menu_item', $item_html);
     $output .= $item_html;
   }
   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
@@ -71,21 +71,21 @@ class Sagextra_Nav_Walker extends Walker_Nav_Menu {
  * Clean up wp_nav_menu_args
  *
  * Remove the container
- * Use Sagextra_Nav_Walker() by default
+ * Use Sagextras_Nav_Walker() by default
  * Remove the id="" on nav menu items
  */
-function sagextra_nav_menu_args($args = '') {
-  $sagextra_nav_menu_args['container'] = false;
+function sagextras_nav_menu_args($args = '') {
+  $sagextras_nav_menu_args['container'] = false;
   if (!$args['items_wrap']) {
-    $sagextra_nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
+    $sagextras_nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
   }
   if (current_theme_supports('bootstrap-top-navbar') && !$args['depth']) {
-    $sagextra_nav_menu_args['depth'] = 2;
+    $sagextras_nav_menu_args['depth'] = 2;
   }
   if (!$args['walker']) {
-    $sagextra_nav_menu_args['walker'] = new Sagextras_Nav_Walker();
+    $sagextras_nav_menu_args['walker'] = new Sagextras_Nav_Walker();
   }
-  return array_merge($args, $sagextra_nav_menu_args);
+  return array_merge($args, $sagextras_nav_menu_args);
 }
 
 /**
@@ -99,12 +99,12 @@ function is_element_empty($element) {
 function url_compare($url, $rel) {
   $url = trailingslashit($url);
   $rel = trailingslashit($rel);
-  if ((strcasecmp($url, $rel) === 0) || sagextra_root_relative_url($url) == $rel) { 
+  if ((strcasecmp($url, $rel) === 0) || sagextras_root_relative_url($url) == $rel) { 
     return true; 
   } else {
     return false;
   }
 }
 
-add_filter('wp_nav_menu_args', 'sagextra_nav_menu_args');
+add_filter('wp_nav_menu_args', 'sagextras_nav_menu_args');
 add_filter('nav_menu_item_id', '__return_null');
