@@ -1,6 +1,5 @@
 <?php
 
-namespace D6D\Sagextras\Navwalker;
 /**
  * Restore the sagextra Bootstrap Navwalker for a cleaner Bootstrap menu 
  *

@@ -1,6 +1,5 @@
 <?php
 
-namespace D6D\Sagextras\Gallery;
 /**
  * Restore the Roots Bootstrap Gallery code for a gallery that's Bootstrap friendly.
  *

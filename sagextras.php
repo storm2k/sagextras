@@ -11,8 +11,6 @@ License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
 
-namespace D6D\Sagextras;
-
 function load_modules() {
   	if (current_theme_supports('se-navwalker')) {
   		require_once __DIR__ . '/modules/navwalker.php';
@@ -22,4 +20,4 @@ function load_modules() {
   		require_once __DIR__ . '/modules/gallery.php';
   	}
 }
-add_action('after_setup_theme', __NAMESPACE__ . '\\load_modules');
+add_action('after_setup_theme', 'load_modules');
