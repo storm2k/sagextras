@@ -5,7 +5,7 @@ A tiny WordPress plugin that restores some Bootstrap specific functionality to t
 ## Modules
 
 * **Restore the Roots Bootstrap Navwalker**<br>
-  `add_theme_support('se-navwalker');`
+  `add_theme_support('se-nav-walker');`
 
 **REMINDER!!!** You need to go into `templates/header.php` and replace the menu code with the code contained in [this Gist](https://gist.github.com/storm2k/c7ca7f93ed155f5a8f85) so the menu works properly.
 
@@ -22,4 +22,6 @@ I welcome all ideas and support on how to make this better for everyone. Pull re
 
 ## ToDo
 
-Look into using the code from the 8.0 or 8.1 releases of Sage for the navwalker. This is currently using the 7.0.3 version, and it can be a little flaky.
+- NavWalker uses code from Sage release 8.1.1. Looking forward to modularizing utils it uses.
+- Gallery is now namespaced, looking forward to modularizing any utils it uses.
+ 
