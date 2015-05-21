@@ -19,3 +19,7 @@ Please feel free to open an issue if you run into problems.
 ## Contributions
 
 I welcome all ideas and support on how to make this better for everyone. Pull requests are more than welcome.
+
+## ToDo
+
+Look into using the code from the 8.0 or 8.1 releases of Sage for the navwalker. This is currently using the 7.0.3 version, and it can be a little flaky.
