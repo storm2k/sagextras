@@ -11,17 +11,59 @@ License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
 
-function load_modules() {
-  if (current_theme_supports('se-navwalker')) {
-    // Check if the Soil 3.x navwalker is enabled and turn off if so.
-    if (current_theme_supports('soil-nav-walker')) {
-      remove_theme_support('soil-nav-walker');
+namespace Sageextras;
+
+class Options {
+  protected static $modules = [];
+  protected $options = [];
+
+  public static function init($module, $options = []) {
+    if (!isset(self::$modules[$module])) {
+      self::$modules[$module] = new static((array) $options);
     }
-    require_once __DIR__ . '/modules/navwalker.php';
+    return self::$modules[$module];
   }
 
-  if (current_theme_supports('se-gallery')) {
-    require_once __DIR__ . '/modules/gallery.php';
+  public static function getByFile($file) {
+    if (file_exists($file) || file_exists(__DIR__ . '/modules/' . $file)) {
+      return self::get('se-' . basename($file, '.php'));
+    }
+    return [];
+  }
+
+  public static function get($module) {
+    if (isset(self::$modules[$module])) {
+      return self::$modules[$module]->options;
+    }
+    if (substr($module, 0, 5) !== 'se-') {
+      return self::get('se-' . $module);
+    }
+    return [];
+  }
+
+  protected function __construct($options) {
+    $this->set($options);
+  }
+
+  public function set($options) {
+    $this->options = $options;
   }
 }
-add_action('after_setup_theme', 'load_modules');
+
+function load_modules() {
+  global $_wp_theme_features;
+  foreach (glob(__DIR__ . '/modules/*.php') as $file) {
+    $feature = 'se-' . basename($file, '.php');
+    $soil_feature = 'soil-'. basename($file, '.php');
+    if (isset($_wp_theme_features[$feature])) {
+        
+      if(isset($_wp_theme_features[$soil_feature])){
+        unset($_wp_theme_features[$soil_feature]);
+      }
+      
+      Options::init($feature, $_wp_theme_features[$feature]);
+      require_once $file;
+    }
+  }
+}
+add_action('after_setup_theme', __NAMESPACE__ . '\\load_modules');
