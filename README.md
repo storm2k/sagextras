@@ -20,8 +20,10 @@ Please feel free to open an issue if you run into problems.
 
 I welcome all ideas and support on how to make this better for everyone. Pull requests are more than welcome.
 
+(A big thanks to everyone who has contributed thusfar, especially [johnny-bit](https://github.com/johnny-bit), who has done a lot of work cleaning up the code and bringing it up to par for standards!)
+
 ## ToDo
 
 - NavWalker uses code from Sage release 8.1.1. Looking forward to modularizing utils it uses.
 - Gallery is now namespaced, looking forward to modularizing any utils it uses.
- 
+
