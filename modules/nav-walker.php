@@ -91,7 +91,10 @@ class NavWalker extends \Walker_Nav_Menu {
 
     $classes = array_unique($classes);
 
-    return array_filter($classes, 'Sageextras\\Nav\\is_element_empty');
+    return array_filter($classes, function ($element) {
+      $element = trim($element);
+      return !empty($element);
+    });
   }
 }
 
@@ -117,14 +120,6 @@ function nav_menu_args($args = '') {
     $sagextras_nav_menu_args['walker'] = new NavWalker();
   }
   return array_merge($args, $sagextras_nav_menu_args);
-}
-
-/**
- * Utility functions.
- */
-function is_element_empty($element) {
-  $element = trim($element);
-  return !empty($element);
 }
 
 /**
