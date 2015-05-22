@@ -41,6 +41,8 @@ Please feel free to open an [issue](https://github.com/storm2k/sagextras/issues)
 
 I welcome all ideas and support on how to make this better for everyone. [Pull requests](https://github.com/storm2k/sagextras/pulls) are more than welcome.
 
+### Coding Standards
+
 For convenience coding standard rules, compatible with Roots guidelines are provided, along with proper .editorconfig file.
 
 You can check if your contribution passes the styleguide by installing [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and running the following in your project directory:
@@ -48,6 +50,12 @@ You can check if your contribution passes the styleguide by installing [PHP Code
 ```bash
 phpcs --standard=ruleset.xml --extensions=php -n -s .
 ```
+
+### Additonal code rules
+
+* Use `Sagextras\` namespace
+* Use short array syntax
+* Use short echo syntax
 
 ## ToDo
 
