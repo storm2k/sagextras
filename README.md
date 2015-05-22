@@ -2,6 +2,27 @@
 
 A tiny WordPress plugin that provides some Bootstrap specific functionality to the [Sage](https://roots.io/sage)-based theme. This plugin is modularlized just like Soil, so you only need to load the things you actually need. Add the neccessary lines to your lib/config.php and the functionality will be there.
 
+## Requirements
+
+<table>
+  <thead>
+    <tr>
+      <th>Prerequisite</th>
+      <th>How to check</th>
+      <th>How to install</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PHP &gt;= 5.4.x</td>
+      <td><code>php -v</code></td>
+      <td>
+        <a href="http://php.net/manual/en/install.php">php.net</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## Modules
 
 * **Restore the Roots Bootstrap Navwalker**<br>
