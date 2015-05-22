@@ -1,9 +1,10 @@
 <?php
 
 namespace Sageextras\Nav;
+
 /**
  * Restore the Roots 8.1.1 Bootstrap Navwalker for a cleaner Bootstrap menu
- *  
+ *
  * * Walker_Nav_Menu (WordPress default) example output:
  *   <li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8"><a href="/">Home</a></li>
  *   <li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="/sample-page/">Sample Page</a></l
@@ -149,8 +150,8 @@ function root_relative_url($input) {
 function url_compare($url, $rel) {
   $url = trailingslashit($url);
   $rel = trailingslashit($rel);
-  if ((strcasecmp($url, $rel) === 0) || root_relative_url($url) == $rel) { 
-    return true; 
+  if ((strcasecmp($url, $rel) === 0) || root_relative_url($url) == $rel) {
+    return true;
   } else {
     return false;
   }

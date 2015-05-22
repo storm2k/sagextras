@@ -57,7 +57,7 @@ function load_modules() {
     $soil_feature = 'soil-'. basename($file, '.php');
     if (isset($_wp_theme_features[$feature])) {
         
-      if(isset($_wp_theme_features[$soil_feature])){
+      if (isset($_wp_theme_features[$soil_feature])) {
         unset($_wp_theme_features[$soil_feature]);
       }
       
