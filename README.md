@@ -1,6 +1,6 @@
 # Sagextras
 
-A tiny WordPress plugin that restores some Bootstrap specific functionality to the [Sage](https://roots.io/sage) theme. This plugin is modularlized just like Soil, so you only need to load the things you actually need. Add the neccessary lines to your lib/config.php and the functionality will be there.
+A tiny WordPress plugin that provides some Bootstrap specific functionality to the [Sage](https://roots.io/sage)-based theme. This plugin is modularlized just like Soil, so you only need to load the things you actually need. Add the neccessary lines to your lib/config.php and the functionality will be there.
 
 ## Modules
 
@@ -14,11 +14,19 @@ A tiny WordPress plugin that restores some Bootstrap specific functionality to t
 
 ## Support
 
-Please feel free to open an issue if you run into problems.
+Please feel free to open an [issue](https://github.com/storm2k/sagextras/issues) if you run into problems.
 
 ## Contributions
 
-I welcome all ideas and support on how to make this better for everyone. Pull requests are more than welcome.
+I welcome all ideas and support on how to make this better for everyone. [Pull requests](https://github.com/storm2k/sagextras/pulls) are more than welcome.
+
+For convenience coding standard rules, compatible with Roots guidelines are provided, along with proper .editorconfig file.
+
+You can check if your contribution passes the styleguide by installing [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and running the following in your project directory:
+
+```bash
+phpcs --standard=ruleset.xml --extensions=php -n -s .
+```
 
 ## ToDo
 
