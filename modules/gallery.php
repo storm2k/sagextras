@@ -37,18 +37,18 @@ function gallery($attr) {
   }
 
   extract(shortcode_atts([
-    'order'      => 'ASC',
-    'orderby'    => 'menu_order ID',
-    'id'         => $post->ID,
-    'itemtag'    => '',
-    'icontag'    => '',
-    'captiontag' => '',
-    'columns'    => 4,
-    'size'       => 'thumbnail',
-    'include'    => '',
-    'exclude'    => '',
-    'link'       => ''
-  ], $attr));
+      'order' => 'ASC',
+      'orderby' => 'menu_order ID',
+      'id' => $post->ID,
+      'itemtag' => '',
+      'icontag' => '',
+      'captiontag' => '',
+      'columns' => 4,
+      'size' => 'thumbnail',
+      'include' => '',
+      'exclude' => '',
+      'link' => ''
+                  ], $attr));
 
   $id = intval($id);
   $columns = (12 % $columns == 0) ? $columns : 4;
@@ -88,7 +88,7 @@ function gallery($attr) {
 
   $i = 0;
   foreach ($attachments as $id => $attachment) {
-    switch($link) {
+    switch ($link) {
       case 'file':
         $image = wp_get_attachment_link($id, $size, false, false);
         break;
@@ -100,7 +100,7 @@ function gallery($attr) {
         break;
     }
     $output .= ($i % $columns == 0) ? '<div class="row gallery-row">' : '';
-    $output .= '<div class="' . $grid .'">' . $image;
+    $output .= '<div class="' . $grid . '">' . $image;
 
     if (trim($attachment->post_excerpt)) {
       $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
@@ -116,6 +116,7 @@ function gallery($attr) {
 
   return $output;
 }
+
 if (current_theme_supports('se-gallery')) {
   remove_shortcode('gallery');
   add_shortcode('gallery', __NAMESPACE__ . '\\gallery');
@@ -129,4 +130,5 @@ function attachment_link_class($html) {
   $html = str_replace('<a', '<a class="thumbnail img-thumbnail"', $html);
   return $html;
 }
+
 add_filter('wp_get_attachment_link', __NAMESPACE__ . '\\attachment_link_class', 10, 1);
