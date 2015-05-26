@@ -1,6 +1,6 @@
 <?php
 
-namespace Sageextras\Gallery;
+namespace Sagextras\Gallery;
 
 /**
  * Restore the Roots Bootstrap Gallery code for a gallery that's Bootstrap friendly.
