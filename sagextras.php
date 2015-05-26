@@ -12,7 +12,7 @@
   License URI:        http://opensource.org/licenses/MIT
  */
 
-namespace Sageextras;
+namespace Sagextras;
 
 class Options {
 
