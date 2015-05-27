@@ -14,11 +14,11 @@ A tiny WordPress plugin that restores some Bootstrap specific functionality to t
 
 ## Support
 
-Please feel free to open an issue if you run into problems.
+Please feel free to open an [issue](https://github.com/storm2k/sagextras/issues) if you run into problems.
 
 ## Contributions
 
-I welcome all ideas and support on how to make this better for everyone. Pull requests are more than welcome.
+I welcome all ideas and support on how to make this better for everyone. [Pull requests](https://github.com/storm2k/sagextras/pulls) are more than welcome. Please take a look at the [contributing](https://github.com/storm2k/sagextras/blob/master/CONTRIBUTING.md) file for coding standards and some testing.
 
 (A big thanks to everyone who has contributed thusfar, especially [johnny-bit](https://github.com/johnny-bit), who has done a lot of work cleaning up the code and bringing it up to par for standards!)
 
