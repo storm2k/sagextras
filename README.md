@@ -9,8 +9,8 @@ A tiny WordPress plugin that restores some Bootstrap specific functionality to t
 
 **REMINDER!!!** You need to go into `templates/header.php` and replace the menu code with the code contained in [this Gist](https://gist.github.com/johnny-bit/cc8840f148da01c2af52) so the menu works properly.
 
-* **Bootstrap friendly Gallery code**<br>
-  `add_theme_support('se-gallery');`
+~~* **Bootstrap friendly Gallery code**<br>
+  `add_theme_support('se-gallery');`~~ **Please Note:** With the release of Sage 8.3.0, this doesn't work anymore because Sage now uses WordPress's standard HTML5 gallery codes.
 
 ## Support
 
